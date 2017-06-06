@@ -16,10 +16,10 @@ RUN pip install --upgrade setuptools \
 RUN mkdir -p /config \
     && mkdir -p /storage
 
-VOLUME ["/flexget", "/storage"]
+VOLUME ["/config", "/storage"]
 
-RUN touch /flexget/config.yml
+RUN touch /config/config.yml
 
 
 # Run commands
-CMD ["/usr/local/bin/flexget","-c","/flexget/config.yml", "--loglevel", "info", "daemon", "start"]
+CMD ["/usr/local/bin/flexget","-c","/config/config.yml", "--loglevel", "info", "daemon", "start"]
