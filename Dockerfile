@@ -1,7 +1,7 @@
 # Base on minimal debian
 
 FROM bitnami/minideb:jessie  
-RUN install_packages python
+RUN install_packages python pip
 
 # Install flexget
 RUN pip install -I flexget
