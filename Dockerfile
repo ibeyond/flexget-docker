@@ -13,12 +13,12 @@ RUN pip install --upgrade setuptools \
 # Cleanup
 
 # Folders and configs
-RUN mkdir -p /root/.flexget \
-    && touch /root/.flexget/config.yml
+RUN mkdir -p /flexget
 
-# Export ports and folders
-VOLUME ["/root/.flexget"]
+VOLUME ["/flexget"]
+
+RUN touch /flexget/config.yml
 
 
 # Run commands
-CMD ["/usr/local/bin/flexget", "--loglevel", "info", "daemon", "start"]
+CMD ["/usr/local/bin/flexget","-c","/flexget/config.yml", "--loglevel", "info", "daemon", "start"]
