@@ -13,9 +13,10 @@ RUN pip install --upgrade setuptools \
 # Cleanup
 
 # Folders and configs
-RUN mkdir -p /flexget
+RUN mkdir -p /config \
+    && mkdir -p /storage
 
-VOLUME ["/flexget"]
+VOLUME ["/flexget", "/storage"]
 
 RUN touch /flexget/config.yml
 
