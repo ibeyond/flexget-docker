@@ -7,7 +7,8 @@ RUN install_packages python python-pip
 RUN install_packages deluge
  
 # Install flexget
-RUN pip install -I flexget
+RUN pip install --upgrade setuptools \
+    && pip install -I flexget
     
 # Cleanup
 
