@@ -1,15 +1,15 @@
 # Base on minimal debian
 
 FROM bitnami/minideb:jessie  
-RUN install_packages python pip
-
-# Install flexget
-RUN pip install -I flexget
+RUN install_packages python python-pip
 
 # Install deluge
 RUN add-apt-repository ppa:deluge-team/ppa \
     && apt-get update \
-    && apt-get install deluge
+    && install_packages deluge
+ 
+# Install flexget
+RUN pip install -I flexget
     
 # Cleanup
 
