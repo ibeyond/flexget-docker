@@ -22,7 +22,6 @@ RUN touch /config/config.yml
 
 
 # Remove config locks
-
 RUN rm /config/.config-lock
 
 # Run commands
