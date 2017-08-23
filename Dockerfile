@@ -22,7 +22,7 @@ RUN touch /config/config.yml
 
 
 # Remove config locks
-RUN rm /config/.config-lock
+RUN touch /config/e.config-lock && rm /config/.config-lock
 
 # Run commands
 CMD ["/usr/local/bin/flexget","-c","/config/config.yml", "--loglevel", "info", "daemon", "start"]
