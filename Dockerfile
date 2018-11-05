@@ -4,7 +4,9 @@ FROM bitnami/minideb:jessie
 RUN install_packages python python-pip
 
 # Install deluge
-RUN install_packages deluge
+# RUN install_packages deluge
+RUN pip install deluge-client
+
  
 # Install flexget
 RUN pip install --upgrade setuptools \
