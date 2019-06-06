@@ -22,9 +22,5 @@ VOLUME ["/config", "/storage"]
 
 RUN touch /config/config.yml
 
-
-# Remove config locks
-RUN touch /config/.config-lock && rm /config/.config-lock
-
-# Run commands
-CMD ["/usr/local/bin/flexget","-c","/config/config.yml", "--loglevel", "info", "daemon", "start"]
+# Run commands: Remove lock files and start daemon
+CMD ["sh", "-c", "touch /config/.config-lock && rm /config/.config-lock && /usr/local/bin/flexget -c /config/config.yml --loglevel info daemon start"]
