@@ -1,6 +1,6 @@
 # Base on minimal debian
 
-FROM bitnami/minideb:jessie  
+FROM bitnami/minideb:latest
 RUN install_packages python python-pip
 
 # Install deluge
