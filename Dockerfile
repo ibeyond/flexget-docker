@@ -1,7 +1,7 @@
 # Base on minimal debian
 
 FROM bitnami/minideb:latest
-RUN install_packages python python-pip
+RUN install_packages python python-pip python-setuptools
 
 # Install deluge
 # RUN install_packages deluge
