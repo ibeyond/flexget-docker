@@ -1,16 +1,16 @@
 # Base on minimal debian
 
 FROM bitnami/minideb:latest
-RUN install_packages python python-pip python-setuptools
+RUN install_packages python3 python3-pip python3-setuptools
 
 # Install deluge
 # RUN install_packages deluge
-RUN pip install imdbpy deluge-client
+RUN pip3 install imdbpy deluge-client
 
  
 # Install flexget
-RUN pip install --upgrade setuptools \
-    && pip install -I flexget
+RUN pip3 install --upgrade setuptools \
+    && pip3 install -I flexget
     
 # Cleanup
 
