@@ -5,7 +5,7 @@ RUN install_packages python python-pip
 
 # Install deluge
 # RUN install_packages deluge
-RUN pip install imdbpy
+RUN pip install imdbpy deluge-client
 
  
 # Install flexget
